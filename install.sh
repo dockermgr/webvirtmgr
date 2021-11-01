@@ -151,7 +151,7 @@ else
     --restart=unless-stopped \
     --privileged \
     -e TZ="$SERVER_TIMEZONE" \
-    -v "$DATADIR/data":/data/db \
+    -v "$DATADIR/data":/data \
     -v /var/run/libvirt/libvirt-sock:/var/run/libvirt/libvirt-sock \
     -p $SERVER_LISTEN:$SERVER_PORT:$SERVER_PORT_INT \
     -p $SERVER_LISTEN:$SERVER_PORT_OTHER:$SERVER_PORT_OTHER_INT \
