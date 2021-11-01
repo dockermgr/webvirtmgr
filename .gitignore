@@ -1,0 +1,5 @@
+# Disable reminder in prompt
+ignoredirmessage
+
+# Ignore installed
+.installed
