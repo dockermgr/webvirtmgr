@@ -53,7 +53,7 @@ __port_not_in_use() { [[ -d "/etc/nginx/vhosts.d" ]] && grep -wRsq "${1:-$SERVER
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 # Make sure the scripts repo is installed
 scripts_check
-REPO_BRANCH="${GIT_REPO_BRANCH:-master}"
+REPO_BRANCH="${GIT_REPO_BRANCH:-main}"
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 # Defaults
 APPNAME="webvirtmgr"
