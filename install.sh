@@ -178,10 +178,10 @@ run_postinst() {
   if ! grep -sq "$SERVER_HOST" /etc/hosts; then
     if [[ -n "$SERVER_PORT_INT" ]]; then
       if [[ $(hostname -d 2>/dev/null | grep '^') = 'local' ]]; then
-        echo "$SERVER_LISTEN     $APPNAME.local" | sudo tee -a /etc/hosts &>/dev/null
+        [[ -w /etc/hosts ]] || echo "$SERVER_LISTEN     $APPNAME.local" | sudo tee -a /etc/hosts &>/dev/null
       else
-        echo "$SERVER_LISTEN     $APPNAME.local" | sudo tee -a /etc/hosts &>/dev/null
-        echo "$SERVER_LISTEN     $SERVER_HOST" | sudo tee -a /etc/hosts &>/dev/null
+        [[ -w /etc/hosts ]] || echo "$SERVER_LISTEN     $APPNAME.local" | sudo tee -a /etc/hosts &>/dev/null
+        [[ -w /etc/hosts ]] || echo "$SERVER_LISTEN     $SERVER_HOST" | sudo tee -a /etc/hosts &>/dev/null
       fi
     fi
   fi
