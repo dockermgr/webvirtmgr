@@ -3,3 +3,5 @@ ignoredirmessage
 
 # Ignore installed
 .installed
+# ignore commit message
+.gitcommit
